@@ -70,7 +70,4 @@ if [[ "$PORT_NAME" == "Minetest" ]]; then
     break
 fi
 
-pm_platform_helper() {
-  # Help keep XongleBongles sanity below
-  echo ""
-}
+pm_platform_helper() {}
