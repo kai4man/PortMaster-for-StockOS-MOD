@@ -1,3 +1,6 @@
+> **Don't ask questions about port launches on the official PortMaster Discord channel or anywhere else. You won't get an answer. Don't distract the PortMaster team.
+This is a fork and it's not officially supported. Thank you for understanding.**
+
 # PortMaster for Anbernic H700 StockOS MOD
 
 An adaptation of the original PortMaster to work on H700 devices with StockOS MOD.
