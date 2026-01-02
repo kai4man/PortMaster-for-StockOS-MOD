@@ -21,50 +21,6 @@ GODOT2_OPTS="-r ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f"
 # Use for Godot 3+
 GODOT_OPTS="--resolution ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f"
 
-# Fixing ports startup
-declare -A PORTS_RA_64BIT=(
-  ["Dinothawr"]="dinothawr"
-  ["Cave Story"]="cavestory" 
-  ["Mr. Boom"]="mrboom"
-  ["Quake"]="quake"
-  ["Rick Dangerous"]="xrick"
-  ["Cannonball"]="cannonball"
-)
-
-PORTS_ARMHF=("2048")
-PORT_NAME=$(basename "$0" .sh)
-
-FOLDER_NAME="${PORTS_RA_64BIT[$PORT_NAME]}"
-
-for port in "${PORTS_ARMHF[@]}"; do
-  if [[ "$PORT_NAME" == "$port" ]]; then
-    #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib32
-    #export raloc="/mnt/vendor/deep/retro"
-    #export raconf="--config /.config/retroarch/retroarch.cfg"
-    export DEVICE_ARCH="armhf"
-      break
-  fi
-done
-
-if [ -n "$FOLDER_NAME" ]; then
-  SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-  GAME_DIR="$SCRIPT_DIR/$FOLDER_NAME"
-  
-  LIB_FILE=$(find "$GAME_DIR" -maxdepth 1 -name "*_libretro.so" -type f | head -1)
-  
-  if [ -n "$LIB_FILE" ]; then
-    LIB_NAME=$(basename "$LIB_FILE")
-    
-    if file "$LIB_FILE" | grep -q "ELF 64-bit"; then
-      vendor_core="/mnt/vendor/deep/retro/cores/$LIB_NAME"
-      
-      if [ -f "$vendor_core" ]; then
-        cp "$vendor_core" "$GAME_DIR/"
-      fi
-    fi
-  fi
-fi
-
 if [[ "$PORT_NAME" == "Minetest" ]]; then
   export CFW_NAME="muOS"
     break
