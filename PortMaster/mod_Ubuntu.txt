@@ -9,15 +9,13 @@
 #
 # usage `[ -f "${controlfolder}/mod_${CFW_NAME}.txt" ] && source "${controlfolder}/mod_${CFW_NAME}.txt"`
 
-if [[ "$PORT_32BIT" == "Y" ]]; then
-    export SPA_PLUGIN_DIR="/usr/lib32/spa-0.2"
-    export PIPEWIRE_MODULE_DIR="/usr/lib32/pipewire-0.3/"
-fi
+# Getting the port script name
+PORT_NAME=$(basename "$0" .sh)
 
 # Set TAR_OPTIONS to resolve uid/gid conflicts
 export TAR_OPTIONS="--no-same-owner --no-same-permissions"
 
-#Creating a fake DRM device
+# Creating a fake DRM device
 sudo mkdir -p /dev/dri
 sudo mknod /dev/dri/card0 c 226 0
 sudo chmod 666 /dev/dri/card0
@@ -31,10 +29,12 @@ GODOT2_OPTS="-r ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f"
 # Use for Godot 3+
 GODOT_OPTS="--resolution ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT} -f"
 
+# Use for Retroarch
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib32
 readonly raloc="/usr/lib/retroarch"
 readonly raconf="--config /.config/retroarch/retroarch.cfg"
 
+# Fixing the Minetest port
 if [[ "$PORT_NAME" == "Minetest" ]]; then
   export CFW_NAME="muOS"
     break
