@@ -129,7 +129,7 @@ else
     fi
 fi
 
-DEVICE_RAM=$(free | awk '/Mem:/ { printf("%.0f", ($2 / 1024 / 1024)) }')
+DEVICE_RAM=$(grep MemTotal /proc/meminfo | awk '{printf("%.0f", $2 / 1024 / 1024)}')
 
 ## Get DEVICE_NAME
 if [[ "$CFW_NAME" == "EmuELEC" ]]; then
