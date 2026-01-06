@@ -140,6 +140,8 @@ pm_gptokeyb_finish() {
 
 
 pm_finish() {
+    $ESUDO rm -f /dev/dri/card0
+
     pm_gptokeyb_finish
     pm_message_end
 
