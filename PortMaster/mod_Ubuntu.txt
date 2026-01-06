@@ -15,11 +15,6 @@ PORT_NAME=$(basename "$0" .sh)
 # Set TAR_OPTIONS to resolve uid/gid conflicts
 export TAR_OPTIONS="--no-same-owner --no-same-permissions"
 
-# Creating a fake DRM device
-sudo mkdir -p /dev/dri
-sudo mknod /dev/dri/card0 c 226 0
-sudo chmod 666 /dev/dri/card0
-
 # Set the virtual screen
 CUR_TTY="/dev/null"
 
@@ -46,5 +41,9 @@ pm_platform_helper() {
     fi
 
     # DO SOMETHING HERE
+    # Creating a fake DRM device
+    sudo mkdir -p /dev/dri
+    sudo mknod /dev/dri/card0 c 226 0
+    sudo chmod 666 /dev/dri/card0
     printf ""
 }
