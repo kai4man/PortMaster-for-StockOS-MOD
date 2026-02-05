@@ -9,6 +9,8 @@
 #
 # usage `[ -f "${controlfolder}/mod_${CFW_NAME}.txt" ] && source "${controlfolder}/mod_${CFW_NAME}.txt"`
 
+export SDL_MALI_FORCE_STRETCH=1
+
 # Getting the port script name
 PORT_NAME=$(basename "$0" .sh)
 
