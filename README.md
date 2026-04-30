@@ -10,6 +10,7 @@ https://portmaster.games
 
 ## ⚠️ Important clarification
 > To achieve 100% ports running on stockOS MOD you need to install my patch that fixes all known issues in the system.
+> The patch is included in StockOS MOD starting with version v3.9.8
 
 [**💾 Download the patch**](https://drive.google.com/drive/folders/1W5e65M720bmWrbc3F1P9U43HiQZwUCAa?usp=sharing)
 
