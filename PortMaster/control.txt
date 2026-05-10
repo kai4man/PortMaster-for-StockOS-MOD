@@ -146,8 +146,16 @@ get_controls() {
     LOWRES="N"
     ANALOGSTICKS=0
   else
-    DEVICE="19000000010000000100000000010000"
-    param_device="anbernic"
+    case $(head -n 1 /mnt/vendor/oem/board.ini) in
+      "RG35xxH"|"RG40xxH"|"RG40xxV"|"RG34xxSP"|"RG35xxPRO"|"RGcubexx")
+        DEVICE="19000000010000000100000000010000"
+        param_device="anbernic"
+        ;;
+      *)
+        DEVICE="19002cb4010000000100000000010000"
+        param_device="anbernic"
+        ;;
+    esac
   fi
 
   export SDL_GAMECONTROLLERCONFIG_FILE="/tmp/gamecontrollerdb.txt"

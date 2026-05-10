@@ -1797,5 +1797,8 @@ xinput,XInput Controller,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,
 # uConsole
 03000000af1e00002400000010010000,ClockworkPI uConsole,a:b1,b:b2,x:b0,y:b3,back:b8,start:b9,leftx:a0,lefty:a1,platform:Linux, 
 
-# make by G.R.H
-19000000010000000100000000010000,ANBERNIC-keys,a:b0,b:b1,x:b3,y:b2,back:b8,guide:b6,start:b7,leftstick:b9,rightstick:b12,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b10,righttrigger:b11,platform:Linux,
+# With a joystick - by G.R.H
+19000000010000000100000000010000,ANBERNIC-keys,a:b0,b:b1,x:b3,y:b2,back:b6,guide:b8,start:b7,leftstick:b9,rightstick:b12,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b10,righttrigger:b11,platform:Linux,
+
+# No joystick - by G.R.H
+19002cb4010000000100000000010000,ANBERNIC-keys,a:b0,b:b1,x:b3,y:b2,back:b6,guide:b8,start:b7,leftstick:b11,rightstick:b12,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b9,righttrigger:b10,platform:Linux,
