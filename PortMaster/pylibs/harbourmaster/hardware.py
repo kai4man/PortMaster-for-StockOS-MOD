@@ -38,7 +38,7 @@ H700_INFO = {
     'RG40xxH': 'rg40xx-h',
     'RG40xxV': 'rg40xx-v',
     'RG35xxPRO': 'rg35xx-h',
-    'RGsp': 'rgsp',
+    'RGSP': 'rgsp',
     'RGds': 'rg-ds',
     'RGdsplus': 'rg-dsplus'
 }
